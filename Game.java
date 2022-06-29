@@ -1,16 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
 
-class Canvas extends JComponent {
-  
-    public void paint(Graphics g)
-    {
-  
-        // draw and display the line
-        g.drawLine(30, 20, 80, 90);
-    }
-}
-
 class Screen {
     void start() {
         // creating object of JFrame(Window popup)
@@ -23,10 +13,17 @@ class Screen {
         window.setBounds(30, 30, 200, 200);
   
         // setting canvas for draw
-        window.getContentPane().add(new Canvas());
+        window.getContentPane().add(paint(g));
   
         // set visibility
         window.setVisible(true);
+    }
+
+    void paint(Graphics g)
+    {
+  
+        // draw and display the line
+        g.drawLine(30, 20, 80, 90);
     }
 }
 
