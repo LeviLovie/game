@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-class Canvas extends JComponent {
+class MyCanvas extends JComponent {
   
     public void paint(Graphics g)
     {
@@ -11,8 +11,8 @@ class Canvas extends JComponent {
     }
 }
 
-class Screen {
-    void start() {
+public class Screen {
+    public static void main(String[] args) {
         // creating object of JFrame(Window popup)
         JFrame window = new JFrame();
   
@@ -23,17 +23,9 @@ class Screen {
         window.setBounds(30, 30, 200, 200);
   
         // setting canvas for draw
-        window.getContentPane().add(new Canvas());
+        window.getContentPane().add(new MyCanvas());
   
         // set visibility
         window.setVisible(true);
-    }
-}
-
-
-public class Game {
-    public static void main(String[] args) {
-        Screen screen = new Screen();
-        screen.start();
     }
 }
