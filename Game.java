@@ -1,9 +1,10 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 // import java.awt.Point;
+import javax.swing.SwingUtilities;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import game_util.*;
 
 /**
  * A panel maintaining a picture of a Do Not Enter sign.
@@ -28,10 +29,18 @@ import game_util.*;
         g.fillRect(x, y, width, height);
     }
 
-    /**
-     * A little driver in case you want a stand-alone application.
-     */
     public static void main(String[] args) {
-        GameUtilitys gametilitys;
+        /**
+         * A little driver in case you want a stand-alone application.
+         */
+        SwingUtilities.invokeLater(() -> {
+            var panel = new Game();
+            panel.setBackground(Color.WHITE);
+            var frame = new JFrame("A simple graphics program");
+            frame.setSize(400, 300);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.getContentPane().add(panel, BorderLayout.CENTER);
+            frame.setVisible(true);
+        });
     }
 }
